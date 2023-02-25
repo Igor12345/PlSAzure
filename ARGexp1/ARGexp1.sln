@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ARGexp1", "ARGexp1\ARGexp1.deployproj", "{3F36F7B9-5657-4D96-B569-48FD65DC6820}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F36F7B9-5657-4D96-B569-48FD65DC6820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F36F7B9-5657-4D96-B569-48FD65DC6820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F36F7B9-5657-4D96-B569-48FD65DC6820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F36F7B9-5657-4D96-B569-48FD65DC6820}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF129659-CA77-4BAB-8B09-5FC5152EE0B4}
+	EndGlobalSection
+EndGlobal

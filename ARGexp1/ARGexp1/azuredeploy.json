@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "mysqlserver1AdminLogin": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mysqlserver1AdminLoginPassword": {
+      "type": "securestring"
+    }},
+  "variables": {
+    "mysqlserver1Name": "[concat('mysqlserver1', uniqueString(resourceGroup().id))]"},
+  "resources": [
+    {
+      "name": "[variables('mysqlserver1Name')]",
+      "type": "Microsoft.Sql/servers",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2014-04-01-preview",
+      "dependsOn": [],
+      "tags": {
+        "displayName": "mysqlserver1"
+      },
+      "properties": {
+        "administratorLogin": "[parameters('mysqlserver1AdminLogin')]",
+        "administratorLoginPassword": "[parameters('mysqlserver1AdminLoginPassword')]"
+      },
+      "resources": [
+        {
+          "name": "AllowAllWindowsAzureIps",
+          "type": "firewallrules",
+          "location": "[resourceGroup().location]",
+          "apiVersion": "2014-04-01-preview",
+          "dependsOn": [
+            "[resourceId('Microsoft.Sql/servers', variables('mysqlserver1Name'))]"
+          ],
+          "properties": {
+            "startIpAddress": "0.0.0.0",
+            "endIpAddress": "0.0.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "type": "Microsoft.ApiManagement/service",
+      "apiVersion": "2019-01-01"
+    }
+  ],
+  "outputs": {}
+}
